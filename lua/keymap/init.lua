@@ -6,6 +6,10 @@ require("keymap.config")
 
 local plug_map = {
 	-- Bufferline
+	["n|<A-Down>"] = map_cr("m+"):with_noremap():with_silent(),
+	["i|<A-Down>"] = map_cmd("<Esc><Cmd>m+<CR>i"):with_noremap():with_silent(),
+	["n|<A-Up>"] = map_cr("m-2"):with_noremap():with_silent(),
+	["i|<A-Up>"] = map_cmd("<Esc><Cmd>m-2<CR>i"):with_noremap():with_silent(),
 	["n|gb"] = map_cr("BufferLinePick"):with_noremap():with_silent(),
 	["n|∆"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(), -- <A-j>
 	["n|˚"] = map_cr("BufferLineCyclePrev"):with_noremap():with_silent(), -- <A-k>
