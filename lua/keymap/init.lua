@@ -7,21 +7,21 @@ require("keymap.config")
 local plug_map = {
 	-- Bufferline
 	["n|gb"] = map_cr("BufferLinePick"):with_noremap():with_silent(),
-	["n|<A-j>"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(),
-	["n|<A-k>"] = map_cr("BufferLineCyclePrev"):with_noremap():with_silent(),
-	["n|<A-S-j>"] = map_cr("BufferLineMoveNext"):with_noremap():with_silent(),
-	["n|<A-S-k>"] = map_cr("BufferLineMovePrev"):with_noremap():with_silent(),
+	["n|∆"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(), -- <A-j>
+	["n|˚"] = map_cr("BufferLineCyclePrev"):with_noremap():with_silent(), -- <A-k>
+	["n|Ô"] = map_cr("BufferLineMoveNext"):with_noremap():with_silent(), -- <A-S-j>
+	["n|"] = map_cr("BufferLineMovePrev"):with_noremap():with_silent(), -- <A-S-k>
 	["n|<leader>be"] = map_cr("BufferLineSortByExtension"):with_noremap(),
 	["n|<leader>bd"] = map_cr("BufferLineSortByDirectory"):with_noremap(),
-	["n|<A-1>"] = map_cr("BufferLineGoToBuffer 1"):with_noremap():with_silent(),
-	["n|<A-2>"] = map_cr("BufferLineGoToBuffer 2"):with_noremap():with_silent(),
-	["n|<A-3>"] = map_cr("BufferLineGoToBuffer 3"):with_noremap():with_silent(),
-	["n|<A-4>"] = map_cr("BufferLineGoToBuffer 4"):with_noremap():with_silent(),
-	["n|<A-5>"] = map_cr("BufferLineGoToBuffer 5"):with_noremap():with_silent(),
-	["n|<A-6>"] = map_cr("BufferLineGoToBuffer 6"):with_noremap():with_silent(),
-	["n|<A-7>"] = map_cr("BufferLineGoToBuffer 7"):with_noremap():with_silent(),
-	["n|<A-8>"] = map_cr("BufferLineGoToBuffer 8"):with_noremap():with_silent(),
-	["n|<A-9>"] = map_cr("BufferLineGoToBuffer 9"):with_noremap():with_silent(),
+	["n|¡"] = map_cr("BufferLineGoToBuffer 1"):with_noremap():with_silent(), -- <A-1>
+	["n|™"] = map_cr("BufferLineGoToBuffer 2"):with_noremap():with_silent(), -- <A-2>
+	["n|£"] = map_cr("BufferLineGoToBuffer 3"):with_noremap():with_silent(), -- <A-3>
+	["n|¢"] = map_cr("BufferLineGoToBuffer 4"):with_noremap():with_silent(), -- <A-4>
+	["n|∞"] = map_cr("BufferLineGoToBuffer 5"):with_noremap():with_silent(), -- <A-5>
+	["n|§"] = map_cr("BufferLineGoToBuffer 6"):with_noremap():with_silent(), -- <A-6>
+	["n|¶"] = map_cr("BufferLineGoToBuffer 7"):with_noremap():with_silent(), -- <A-7>
+	["n|•"] = map_cr("BufferLineGoToBuffer 8"):with_noremap():with_silent(), -- <A-8>
+	["n|ª"] = map_cr("BufferLineGoToBuffer 9"):with_noremap():with_silent(), -- <A-9>
 	-- Packer
 	["n|<leader>ps"] = map_cr("PackerSync"):with_silent():with_noremap():with_nowait(),
 	["n|<leader>pu"] = map_cr("PackerUpdate"):with_silent():with_noremap():with_nowait(),
@@ -30,7 +30,7 @@ local plug_map = {
 	-- Lsp mapp work when insertenter and lsp start
 	["n|<leader>li"] = map_cr("LspInfo"):with_noremap():with_silent():with_nowait(),
 	["n|<leader>lr"] = map_cr("LspRestart"):with_noremap():with_silent():with_nowait(),
-	["n|<A-t>"] = map_cr("LSoutlineToggle"):with_noremap():with_silent(),
+	["n|†"] = map_cr("LSoutlineToggle"):with_noremap():with_silent(), -- <A-t>
 	["n|g["] = map_cr("Lspsaga diagnostic_jump_next"):with_noremap():with_silent(),
 	["n|g]"] = map_cr("Lspsaga diagnostic_jump_prev"):with_noremap():with_silent(),
 	["n|gs"] = map_cr("Lspsaga signature_help"):with_noremap():with_silent(),
@@ -56,9 +56,9 @@ local plug_map = {
 	["n|<F5>"] = map_cr([[execute v:count . "ToggleTerm direction=vertical"]]):with_noremap():with_silent(),
 	["i|<F5>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=vertical<CR>"):with_noremap():with_silent(),
 	["t|<F5>"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
-	["n|<A-d>"] = map_cr([[execute v:count . "ToggleTerm direction=float"]]):with_noremap():with_silent(),
-	["i|<A-d>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=float<CR>"):with_noremap():with_silent(),
-	["t|<A-d>"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
+	["n|∂"] = map_cr([[execute v:count . "ToggleTerm direction=float"]]):with_noremap():with_silent(), -- <A-d>
+	["i|∂"] = map_cmd("<Esc><Cmd>ToggleTerm direction=float<CR>"):with_noremap():with_silent(), -- <A-d>
+	["t|∂"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(), -- <A-d>
 	["n|<leader>g"] = map_cr("lua toggle_lazygit()"):with_noremap():with_silent(),
 	["t|<leader>g"] = map_cmd("<Esc><Cmd>lua toggle_lazygit()<CR>"):with_noremap():with_silent(),
 	["n|<leader>G"] = map_cu("Git"):with_noremap():with_silent(),
@@ -132,8 +132,8 @@ local plug_map = {
 	["o|m"] = map_cu([[lua require('tsht').nodes()]]):with_silent(),
 	["c|Q"] = map_cu([[%SnipRun]]):with_silent(),
 	-- Plugin Tabout
-	["i|<A-l>"] = map_cmd([[<Plug>(TaboutMulti)]]):with_silent(),
-	["i|<A-h>"] = map_cmd([[<Plug>(TaboutBackMulti)]]):with_silent(),
+	["i|¬"] = map_cmd([[<Plug>(TaboutMulti)]]):with_silent(), -- <A-l>
+	["i|˙"] = map_cmd([[<Plug>(TaboutBackMulti)]]):with_silent(), -- <A-h>
 	-- Plugin Diffview
 	["n|<leader>D"] = map_cr("DiffviewOpen"):with_silent():with_noremap(),
 	["n|<leader><leader>D"] = map_cr("DiffviewClose"):with_silent():with_noremap(),

@@ -19,13 +19,13 @@ local def_map = {
 	["n|<C-l>"] = map_cmd("<C-w>l"):with_noremap(),
 	["n|<C-j>"] = map_cmd("<C-w>j"):with_noremap(),
 	["n|<C-k>"] = map_cmd("<C-w>k"):with_noremap(),
-	["n|<A-[>"] = map_cr("vertical resize -5"):with_silent(),
-	["n|<A-]>"] = map_cr("vertical resize +5"):with_silent(),
-	["n|<A-;>"] = map_cr("resize -2"):with_silent(),
-	["n|<A-'>"] = map_cr("resize +2"):with_silent(),
+	["n|“"] = map_cr("vertical resize -5"):with_silent(), -- <A-[>
+	["n|‘"] = map_cr("vertical resize +5"):with_silent(), -- <A-]>
+	["n|…"] = map_cr("resize -2"):with_silent(), -- <A-;>
+	["n|æ"] = map_cr("resize +2"):with_silent(), -- <A-'>
 	["n|<C-q>"] = map_cmd(":wq<CR>"),
-	["n|<A-q>"] = map_cmd(":Bwipeout<CR>"),
-	["n|<A-S-q>"] = map_cmd(":q!<CR>"),
+	["n|œ"] = map_cmd(":Bwipeout<CR>"), -- <A-q>
+	["n|Œ"] = map_cmd(":q!<CR>"), -- <A-S-q>
 	["n|<leader>o"] = map_cr("setlocal spell! spelllang=en_us"),
 	-- Insert
 	["i|<C-u>"] = map_cmd("<C-G>u<C-U>"):with_noremap(),
